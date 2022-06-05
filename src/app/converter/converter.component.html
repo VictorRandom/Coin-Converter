@@ -1,29 +1,33 @@
 <div class="container">
   <h1>Conversor de Moedas</h1>
 
-  <div class="coins">
+  <form #f="ngForm"  class="coins">
 
-    <select class="form-select" aria-label="Default select example" id="CoinToConvert">
-      <option selected>Valor a ser convertido</option>
-      <option value="1">R$ (real brasileiro)</option>
-      <option value="2">$ (dolar americano)</option>
-      <option value="3">€ (euro)</option>
-    </select>
-    <div class="input-group input-group-sm mb-3">
-      <span class="input-group-text" id="inputGroup-sizing-sm">Small</span>
-      <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Digite o valor a ser convertido">
+    <div class="form-group">
+      <select class="form-select" aria-label="Default select example" id="CoinToConvert">
+        <option selected value="0">Valor a ser convertido</option>
+        <option *ngFor="let coin of coins" value="{{ coin.id }}">{{ coin.tag }} - {{ coin.name }}</option>
+      </select>
+      <div class="input-group input-group-sm mb-3">
+        <span class="input-group-text" id="inputGroup-sizing-sm">Small</span>
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Digite o valor a ser convertido">
+      </div>
     </div>
 
-    <select class="form-select" aria-label="Default select example" id="CoinYouWant">
-      <option selected>Valor a ser convertido</option>
-      <option value="1">R$ (real brasileiro)</option>
-      <option value="2">$ (dolar americano)</option>
-      <option value="3">€ (euro)</option>
-    </select>
+    <button class="btn btn-success">Calcular</button>
 
-    <div class="mb-3">
-      <label for="exampleFormControlInput1" class="form-label">Resultado: </label>
+    <div class="form-group">
+      <select class="form-select" aria-label="Default select example" id="CoinYouWant">
+        <option selected>Valor</option>
+        <option *ngFor="let coin of coins" value="{{ coin.id }}">{{ coin.tag }} - {{ coin.name }}</option>
+      </select>
+
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Resultado: </label>
+      </div>
     </div>
 
-  </div>
+    <p>{{ f.value | json }}</p>
+
+  </form>
 </div>
