@@ -3,35 +3,27 @@
 
   <div class="coins">
 
-    <ul class="nav nav-tabs" id="CoinToConvert">
-      <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="#">R$ (real brasileiro)</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">$ (dolar americano)</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">€ (euro)</a>
-      </li>
+    <select class="form-select" aria-label="Default select example" id="CoinToConvert">
+      <option selected>Valor a ser convertido</option>
+      <option value="1">R$ (real brasileiro)</option>
+      <option value="2">$ (dolar americano)</option>
+      <option value="3">€ (euro)</option>
+    </select>
+    <div class="input-group input-group-sm mb-3">
+      <span class="input-group-text" id="inputGroup-sizing-sm">Small</span>
+      <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" placeholder="Digite o valor a ser convertido">
+    </div>
 
-    </ul>
+    <select class="form-select" aria-label="Default select example" id="CoinYouWant">
+      <option selected>Valor a ser convertido</option>
+      <option value="1">R$ (real brasileiro)</option>
+      <option value="2">$ (dolar americano)</option>
+      <option value="3">€ (euro)</option>
+    </select>
 
-    <input placeholder="Digite o valor a ser convertido" />
-
-
-    <ul class="nav nav-tabs" id="CoinYouWant">
-      <li class="nav-item">
-        <a class="nav-link active" aria-current="page" href="#">R$ (real brasileiro)</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">$ (dolar americano)</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">€ (euro)</a>
-      </li>
-    </ul>
-
-    <div>Resultado: </div>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Resultado: </label>
+    </div>
 
   </div>
 </div>
