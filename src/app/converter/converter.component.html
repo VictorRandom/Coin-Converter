@@ -4,7 +4,7 @@
   <form #f="ngForm"  class="coins">
 
     <div class="form-group">
-      <select class="form-select" aria-label="Default select example" id="CoinToConvert">
+      <select ngModel #coinToConvert class="form-select" aria-label="Default select example" id="coinToConvert">
         <option selected value="0">Valor a ser convertido</option>
         <option *ngFor="let coin of coins" value="{{ coin.id }}">{{ coin.tag }} - {{ coin.name }}</option>
       </select>
@@ -17,7 +17,7 @@
     <button class="btn btn-success">Calcular</button>
 
     <div class="form-group">
-      <select class="form-select" aria-label="Default select example" id="CoinYouWant">
+      <select ngModel #CoinYouWant class="form-select" aria-label="Default select example" id="CoinYouWant">
         <option selected>Valor</option>
         <option *ngFor="let coin of coins" value="{{ coin.id }}">{{ coin.tag }} - {{ coin.name }}</option>
       </select>
